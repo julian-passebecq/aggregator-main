@@ -19,7 +19,7 @@ Categories:
 
  
  
- machnine learning sickit learnn, R,  autoML, collab, tensorflow, keras, 
+ machine learning scikit-learn, R, autoML, colab, TensorFlow, Keras,
 
 
 
