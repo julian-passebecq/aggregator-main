@@ -12,6 +12,7 @@ const getFaviconUrl = (link) => {
 const LinkCard = ({ title, content, link, website, date, type, id, daysAgo, state }) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [hovered, setHovered] = useState(false);
+    const [articleState, setArticleState] = useState(state);
     const open = Boolean(anchorEl);
   
     const handleMenuClick = (e) => {
@@ -28,11 +29,13 @@ const LinkCard = ({ title, content, link, website, date, type, id, daysAgo, stat
       e.stopPropagation();
       handleMenuClose();
 
-      
       try {
-        const response = await axios.patch(`https://dynamic-llama-c5f80f.netlify.app/.netlify/functions/updateArticles/${articleId}`, { newState: actionType });
+        const response = await axios.patch(
+          `https://dynamic-llama-c5f80f.netlify.app/.netlify/functions/updateArticles/${articleId}`,
+          { newState: actionType }
+        );
 
-
+        setArticleState(actionType);
         console.log(response.data);
       } catch (error) {
         console.error('Error updating article state:', error);
@@ -99,9 +102,9 @@ const LinkCard = ({ title, content, link, website, date, type, id, daysAgo, stat
       <CardContent>
         <Typography variant="body2">{content}</Typography>
         <Typography variant="body2" color="text.secondary">{website}</Typography>
-        {state && (
+        {articleState && (
           <Chip
-            label={state}
+            label={articleState}
             variant="outlined"
             color="primary"
             size="small"
