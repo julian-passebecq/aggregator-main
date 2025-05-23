@@ -99,7 +99,15 @@ const LinkCard = ({ title, content, link, website, date, type, id, daysAgo, stat
       <CardContent>
         <Typography variant="body2">{content}</Typography>
         <Typography variant="body2" color="text.secondary">{website}</Typography>
-        <Chip label={state} variant="outlined" color="primary" size="small" style={{ marginTop: '10px' }} />
+        {state && (
+          <Chip
+            label={state}
+            variant="outlined"
+            color="primary"
+            size="small"
+            style={{ marginTop: '10px' }}
+          />
+        )}
       </CardContent>
       
       <Menu

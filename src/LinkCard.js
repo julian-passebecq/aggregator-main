@@ -110,7 +110,7 @@ const getBorderColorByType = (type) => {
   }
 };
 
-const getDaysAgo = (date) => {
+export const getDaysAgo = (date) => {
   const today = new Date();
   const linkDate = new Date(date);
   const differenceInTime = today.getTime() - linkDate.getTime();
@@ -168,3 +168,4 @@ const LinkCard = ({ title, content, link, website, date, type, description }) =>
 };
 
 export default LinkCard;
+export { getDaysAgo };

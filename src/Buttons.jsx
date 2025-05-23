@@ -8,7 +8,7 @@ export default function CategoryButtons({ onCategorySelect }) {
     minWidth: '0px',  // Remove minimum width
     width: '70px',  // Adjust width to fit the content (the logo)
     height: '70px',  // Adjust height similarly
-    padding: '10px',  // Remove padding to reduce extra space
+    padding: '10px',  // Add padding around the icon
     backgroundColor: 'transparent',
     color: 'white',
     marginLeft: '10px', // Remove any default margins
@@ -18,7 +18,6 @@ export default function CategoryButtons({ onCategorySelect }) {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-     // Ensure no padding is applied
     
   };
 
